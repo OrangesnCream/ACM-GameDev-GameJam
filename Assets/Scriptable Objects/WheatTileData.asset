@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36c54d81e0eec6f42b33327fd4b9a1a0, type: 3}
+  m_Name: WheatTileData
+  m_EditorClassIdentifier: 
+  tiles:
+  - {fileID: 11400000, guid: a4eb83a6a3303cb4db989d59eaa13dfa, type: 2}
+  - {fileID: 11400000, guid: 4c01a56f9c79a6d44bcd532170779d49, type: 2}
+  - {fileID: 11400000, guid: 651783c10f433d643a19f7f6ba5389ff, type: 2}
+  - {fileID: 11400000, guid: 872ff84d96740ec42882b7b39a6a38c0, type: 2}
+  - {fileID: 11400000, guid: 3c8397c6671217c4aaf2568abc7e974c, type: 2}
+  - {fileID: 11400000, guid: d9cb9d9cac24e4145b2d7a9f2ed23ff4, type: 2}
+  - {fileID: 11400000, guid: 309695851e8c6ef448881ad530bb0a36, type: 2}
+  - {fileID: 11400000, guid: ba0064c1e61d26c4d813c82862dad0cc, type: 2}
+  - {fileID: 11400000, guid: 99992b7ba971ef849b4bb0f2d4d7f5c1, type: 2}
+  - {fileID: 11400000, guid: f708eae17d39cf743a3e327bd4dcbc6c, type: 2}
+  - {fileID: 11400000, guid: f6d36e595038ebe479163bcb96805cca, type: 2}
+  - {fileID: 11400000, guid: 7492ca3503998cc43adb542769caafc5, type: 2}
+  - {fileID: 11400000, guid: 7285ca4d6783cc14fb27532c165f16f9, type: 2}
+  - {fileID: 11400000, guid: 8fbedd71e79bc8d4d81ecdf1a7e0b6e6, type: 2}
+  - {fileID: 11400000, guid: d66c42e0a258d9f41862725c04295643, type: 2}
+  - {fileID: 11400000, guid: 9cf6c83dfe6b8124fbcb1651d333db2a, type: 2}
+  walkingSpeed: 10
