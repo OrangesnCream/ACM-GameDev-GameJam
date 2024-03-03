@@ -7,15 +7,10 @@ public class TileData : ScriptableObject
 {
     public TileBase[] tiles;
     public float walkingSpeed;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public bool canBurn;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public float spreadChance,spreadIntervall,burnTime;
+    
+
 }
+
