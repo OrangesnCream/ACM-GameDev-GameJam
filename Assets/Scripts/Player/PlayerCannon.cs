@@ -10,9 +10,12 @@ public class PlayerCannon : MonoBehaviour
     public Transform firePoint;
     public bool canFire = true;
     private PlayerController pc;
+    private ParticleSystem partSys;
+
 
     void Start()
     {
+        partSys=firePoint.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>();
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         pc = transform.parent.gameObject.GetComponent<PlayerController>();
     }
@@ -37,8 +40,10 @@ public class PlayerCannon : MonoBehaviour
         }
         */
 
-        if(Input.GetMouseButton(0) && canFire){
-            //Shoot();
+        if(Input.GetMouseButton(0)){
+            partSys.enableEmission=true;
+        }else{
+            partSys.enableEmission=false;
         }
     }
 }

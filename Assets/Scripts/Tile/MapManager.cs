@@ -32,7 +32,7 @@ public class MapManager : MonoBehaviour
             Vector3Int gridPosition= map.WorldToCell(mousePosition);
             TileBase clickedTile=map.GetTile(gridPosition);
             float walkingSpeed=dataFromTiles[clickedTile].walkingSpeed;
-            print("walking speed on "+clickedTile+" is "+walkingSpeed);
+            //print("walking speed on "+clickedTile+" is "+walkingSpeed);
         
         }
     

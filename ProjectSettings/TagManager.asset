@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - water
+  - Fire
   layers:
   - Default
   - TransparentFX
@@ -12,8 +13,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - fire
+  - Icon
   - 
   - 
   - 
@@ -44,6 +45,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 547176509
+    locked: 0
+  - name: water(lake)
+    uniqueID: 3430194059
     locked: 0
   - name: Burnable
     uniqueID: 3518161157

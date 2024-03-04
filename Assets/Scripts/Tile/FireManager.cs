@@ -11,7 +11,8 @@ public class FireManager : MonoBehaviour
 
     [SerializeField]
     private TileBase ashTile;
-
+    [SerializeField]
+    private TileBase dampTile;
 
     [SerializeField]
     private MapManager mapManager;
@@ -23,7 +24,10 @@ public class FireManager : MonoBehaviour
     private List<Vector3Int> activeFires = new List<Vector3Int>();
 
 
-
+    public void FireExtinguished(Vector3Int position){
+        map.SetTile(position,dampTile);
+        activeFires.Remove(position);
+    }
 
     public void FinishedBurning(Vector3Int position)
     {
@@ -72,19 +76,21 @@ public class FireManager : MonoBehaviour
 
 
 
-    private void Update()
-    {
-        if(Input.GetMouseButtonDown(0))
-        {
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3Int gridPosition = map.WorldToCell(mousePosition);
+    private void Start(){
+        BoundsInt bounds = map.cellBounds;
 
-            TileData data = mapManager.GetTileData(gridPosition);
-
-            SetTileOnFire(gridPosition, data);
-
-
+        // Loop until we have started 50 fires
+        for (int i = 0; i < 10; i++){
+            Vector3Int randomPosition = new Vector3Int(Random.Range(bounds.xMin, bounds.xMax),
+            Random.Range(bounds.yMin, bounds.yMax),0);
+            TileData data = mapManager.GetTileData(randomPosition);
+            if (data != null && data.canBurn){
+                SetTileOnFire(randomPosition, data);
+            }else{
+                i--;
+            }
         }
+
     }
 
 }

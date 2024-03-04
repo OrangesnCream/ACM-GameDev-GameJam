@@ -10,6 +10,12 @@ public class Fire : MonoBehaviour
     private FireManager fireManager;
 
     private float burnTimeCounter,spreadIntervallCounter;
+    private float burnEnd=0; //
+    private bool isBeingExtinguished=false;//if it is then call FireExtinguished()
+    private float totalBurnTime;
+    private void Start(){
+        totalBurnTime=data.burnTime;
+    }
      public void StartBurning(Vector3Int position,TileData data, FireManager fm){
         this.position=position;
         this.data=data;
@@ -19,25 +25,28 @@ public class Fire : MonoBehaviour
     }
       private void Update(){
         burnTimeCounter -= Time.deltaTime;
-        if(burnTimeCounter <=0)
-        {
+        if(burnTimeCounter<=burnEnd)
+        {   if(isBeingExtinguished){
+            fireManager.FireExtinguished(position);
+            }else{
             fireManager.FinishedBurning(position);
+            }
             Destroy(gameObject);
         }
 
         spreadIntervallCounter -= Time.deltaTime;
-        if(spreadIntervallCounter <=0)
+        if(spreadIntervallCounter <=0)//raise this when extinguishing the flame
         {
             spreadIntervallCounter = data.spreadIntervall;
             fireManager.TryToSpread(position, data.spreadChance);
         }
-        
+        isBeingExtinguished=false;
     }
- //   void OnTriggerEnter2D(Collider2D collision){
-   //     if (collision.gameObject.tag == "water") {
-        //    Debug.Log("Do something else here");
-    //    }
-    //}
+    public void Extinguish(){
+        burnEnd+=.03f*totalBurnTime;
+        spreadIntervallCounter+=Time.deltaTime;
+       isBeingExtinguished=true;
+    }
 
 
 
