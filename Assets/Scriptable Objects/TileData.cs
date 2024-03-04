@@ -11,6 +11,7 @@ public class TileData : ScriptableObject
 
     public float spreadChance,spreadIntervall,burnTime;
     
+    
 
 }
 

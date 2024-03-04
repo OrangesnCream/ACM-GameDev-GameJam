@@ -12,5 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36c54d81e0eec6f42b33327fd4b9a1a0, type: 3}
   m_Name: AshTile
   m_EditorClassIdentifier: 
-  tiles: []
+  tiles:
+  - {fileID: 11400000, guid: a334965953c068646b70f8ace4ff49a3, type: 2}
   walkingSpeed: 0
+  canBurn: 0
+  spreadChance: 0
+  spreadIntervall: 0
+  burnTime: 0

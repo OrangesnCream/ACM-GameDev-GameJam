@@ -35,5 +35,17 @@ public class MapManager : MonoBehaviour
             print("walking speed on "+clickedTile+" is "+walkingSpeed);
         
         }
+    
     }
+    public TileData GetTileData(Vector3Int tilePosition){
+        TileBase tile = map.GetTile(tilePosition);
+
+        if (tile == null)
+            return null;
+        else
+            return dataFromTiles[tile];
+
+
+    }
+
 }

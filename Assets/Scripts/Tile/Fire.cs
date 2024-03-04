@@ -1,18 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Fire : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private Vector3Int position;
+    private TileData data;
+    private FireManager fireManager;
 
-    // Update is called once per frame
-    void Update()
-    {
+    private float burnTimeCounter,spreadIntervallCounter;
+     public void StartBurning(Vector3Int position,TileData data, FireManager fm){
+        this.position=position;
+        this.data=data;
+        fireManager=fm;
+        burnTimeCounter=data.burnTime;
+        spreadIntervallCounter=data.spreadIntervall;
+    }
+      private void Update(){
+        burnTimeCounter -= Time.deltaTime;
+        if(burnTimeCounter <=0)
+        {
+            fireManager.FinishedBurning(position);
+            Destroy(gameObject);
+        }
+
+        spreadIntervallCounter -= Time.deltaTime;
+        if(spreadIntervallCounter <=0)
+        {
+            spreadIntervallCounter = data.spreadIntervall;
+            fireManager.TryToSpread(position, data.spreadChance);
+        }
         
     }
+ //   void OnTriggerEnter2D(Collider2D collision){
+   //     if (collision.gameObject.tag == "water") {
+        //    Debug.Log("Do something else here");
+    //    }
+    //}
+
+
+
 }

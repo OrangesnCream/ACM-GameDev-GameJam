@@ -30,3 +30,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d66c42e0a258d9f41862725c04295643, type: 2}
   - {fileID: 11400000, guid: 9cf6c83dfe6b8124fbcb1651d333db2a, type: 2}
   walkingSpeed: 10
+  canBurn: 1
+  spreadChance: 5
+  spreadIntervall: 1
+  burnTime: 10

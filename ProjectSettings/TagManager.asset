@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - water
   layers:
   - Default
   - TransparentFX
@@ -50,6 +51,12 @@ TagManager:
   - name: player
     uniqueID: 1311943767
     locked: 0
+  - name: weapon
+    uniqueID: 135760415
+    locked: 0
   - name: fire
     uniqueID: 2447397611
+    locked: 0
+  - name: smoke
+    uniqueID: 4129689465
     locked: 0
