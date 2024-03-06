@@ -19,6 +19,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 52cb7255ec4053c4a801bbd4ec7e82cd, type: 2}
   walkingSpeed: 0
   canBurn: 1
-  spreadChance: 1
-  spreadIntervall: 16
+  spreadChance: 5
+  spreadIntervall: 5
   burnTime: 50

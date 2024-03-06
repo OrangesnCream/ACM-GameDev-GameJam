@@ -73,7 +73,10 @@ public class FireManager : MonoBehaviour
 
     }
 
-
+    public int ActiveFiresCount
+    {
+        get { return activeFires.Count; }
+    }
 
 
     private void Start(){
